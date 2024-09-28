@@ -25,6 +25,7 @@ QString toHumanReadable(const QByteArray& data)
 
 void initializeData()
 {
+    _MSC_VER;
     QFile file{ c_fileData };
     if (file.exists())
     {
