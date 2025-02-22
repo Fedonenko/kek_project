@@ -2,7 +2,8 @@
 
 #include "ui_ty_durak.h"
 
-#include <QTextCodec>
+//#include <QTextCodec>
+
 #include <QFont>
 #include <QCloseEvent>
 #include <QIODevice>
@@ -19,12 +20,14 @@ const QString c_answer{ "answer" };
 
 QString toHumanReadable(const QByteArray& data)
 {
-	const auto codecSys = QTextCodec::codecForName("System");
-	return codecSys->toUnicode(data);
+	//const auto codecSys = QTextCodec::codecForName("System");
+	//return codecSys->toUnicode(data);
+    return data;
 }
 
 void initializeData()
 {
+    _MSC_VER;
     QFile file{ c_fileData };
     if (file.exists())
     {

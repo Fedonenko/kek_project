@@ -49,4 +49,13 @@
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="local_update_deps.bat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="deps.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="conanfile.py" />
+  </ItemGroup>
 </Project>
