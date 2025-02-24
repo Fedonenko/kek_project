@@ -71,6 +71,9 @@
     <ClCompile>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
+    <PreBuildEvent>
+      <Command>echo hello prebuild</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -115,8 +118,10 @@
     <QtMoc Include="escape_button.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Debug_prf" />
     <None Include="deps.props" />
     <None Include="local_update_deps.bat" />
+    <None Include="Release_prf" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="conanfile.py" />

@@ -12,8 +12,8 @@ class KekProjectRecipe(ConanFile):
 	def requirements(self):
 		#self.requires("libiconv/1.17", override=True)
 		#self.requires("harfbuzz/8.3.0")
-		self.requires("crashpad/cci.20220219")
-		#self.requires("brotli/1.0.9")
+		#self.requires("crashpad/cci.20220219")
+		#self.requires("brotli/1.1.0")
 		#self.requires("qt/[>=6.8 <6.8.2]")
 		#self.requires("qt/[*]")
 		self.requires("qt/6.7.3")
@@ -28,6 +28,7 @@ class KekProjectRecipe(ConanFile):
 		#self.options["qt/*"].qtsvg = True
 		#self.options["qt/*"].with_vulkan = True
 		#self.options["qt/*"].qt5compat = True
+
 		#self.options["qt/*"].qtscxml = False
 
 	def layout(self):
