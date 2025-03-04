@@ -72,7 +72,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <PreBuildEvent>
-      <Command>echo hello prebuild</Command>
+      <Command>echo hello prebuild $(Conanqt_qtCoreRootFolder)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -118,13 +118,12 @@
     <QtMoc Include="escape_button.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Debug_prf" />
+    <None Include="deps\conanfile.py" />
+    <None Include="deps\Debug_prf" />
     <None Include="deps.props" />
+    <None Include="deps.targets" />
     <None Include="local_update_deps.bat" />
-    <None Include="Release_prf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="conanfile.py" />
+    <None Include="deps\Release_prf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

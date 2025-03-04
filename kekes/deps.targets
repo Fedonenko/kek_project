@@ -1,0 +1,24 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Name>Deps target</Name>
+  </PropertyGroup>
+
+  <Target Name="CleanDeps" BeforeTargets="Clean">
+    <RemoveDir Directories="conan\$(Configuration)" />
+    <Message Text="Directories: conan\$(Configuration) cleaned! Name: $(Name)" Importance="high"/>
+  </Target>
+  
+  <Target Name="LoadDeps" Condition="!Exists('conan\$(Configuration)')"> 
+    <!-- BeforeTargets="CustomBuild;Build;ComputeReferenceCLInput;PrepareForBuild" -->
+    <Error 
+      Condition="!Exists('local_update_deps.bat')" 
+      Text="The script local_update_deps.bat does not exist or is not accessible."/>
+    
+    <Exec Command="call local_update_deps.bat $(Configuration)" Condition="Exists('local_update_deps.bat')"/>
+    
+    <Error 
+      Condition="!Exists('conan\$(Configuration)')" 
+      Text="Failed to load dependencies. There's no Qt version assigned to the project."/>    
+  </Target>
+
+</Project>

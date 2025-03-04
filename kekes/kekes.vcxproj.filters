@@ -50,14 +50,13 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <None Include="local_update_deps.bat">
+    <None Include="deps\conanfile.py" />
+    <None Include="deps\Debug_prf" />
+    <None Include="deps\deps.props" />
+    <None Include="deps\deps.targets" />
+    <None Include="deps\local_update_deps.bat">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="deps.props" />
-    <None Include="Debug_prf" />
-    <None Include="Release_prf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="conanfile.py" />
+    <None Include="deps\Release_prf" />
   </ItemGroup>
 </Project>
