@@ -6,14 +6,15 @@ class KekProjectRecipe(ConanFile):
 	settings = "os", "compiler", "build_type", "arch"
 	#generators = "CMakeDeps", "CMakeToolchain"
 	#generators = "MSBuildDeps", "MSBuildToolchain"
-	generators = "MSBuildDeps"
+	#generators = "MSBuildDeps"
 	#generators = "CMakeToolchain"
+	generators = "CMakeDeps"
 
 	def requirements(self):
 		#self.requires("libiconv/1.17", override=True)
 		#self.requires("harfbuzz/8.3.0")
 		#self.requires("crashpad/cci.20220219")
-		#self.requires("brotli/1.1.0")
+		self.requires("brotli/1.1.0")
 		#self.requires("qt/[>=6.8 <6.8.2]")
 		#self.requires("qt/[*]")
 		self.requires("qt/6.7.3")

@@ -1,14 +1,21 @@
 [settings]
 arch=x86_64
 build_type=Debug
-compiler=msvc
+#compiler=msvc
+compiler=gcc
 #compiler.cppstd=20
 compiler.cppstd=17
-compiler.version=194
+compiler.version=13
+compiler.libcxx=libstdc++
+#compiler.version=194
 #compiler.version=193
-compiler.runtime=dynamic
-os=Windows
-compiler.runtime_type=Debug
+#compiler.runtime=dynamic
+#os=Windows
+os=Linux
+#compiler.runtime_type=Debug
+
+#[conf]
+#tools.system.package_manager:mode=install
 
 #[options]
 
@@ -22,7 +29,7 @@ compiler.runtime_type=Debug
 #build_type=Debug
 
 [options]
-qt/*:with_freetype=False
+#qt/*:with_freetype=False
 qt/*:with_harfbuzz=False
 qt/*:with_mysql=False
 qt/*:with_pq=False
